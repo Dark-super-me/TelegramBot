@@ -10,14 +10,7 @@ bot = Client(
 )
 # let us defines some events 
 # oof the callback .
-@bot.on_callback_query()
-async def callback_handlers(bot: Client, cb: CallbackQuery):
-    if "closeme" in cb.data:
-        await cb.message.delete(True)
-    elif "opensettings" in cb.data:
-        await OpenSettings(cb.message, user_id=cb.from_user.id)
-        
-# Import OpenSettings ...
+
                                          
 
 @bot.on_message(filters.command(['start']))
