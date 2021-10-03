@@ -1,16 +1,16 @@
 # OpenSettings thing 
-
-START_TEXT = """ <b> Hi {} , \nI'm a next generation video encoder bot!</b> \n
+class Translation(object):
+   START_TEXT = """ <b> Hi {} , \nI'm a next generation video encoder bot!</b> \n
 <b>Bot Maintained By: @Animes_Encoded </b> \n 
 """
-HELP_TEXT = """Checkout The Available Commands Here \n\n Do Follow @Animes_Encoded\n\n If You Find This Bot Usefull❤️"""
+   
+   HELP_TEXT = """Checkout The Available Commands Here \n\n Do Follow @Animes_Encoded\n\n If You Find This Bot Usefull❤️"""
 
-GUIDE = """<b> Right now the bot can only compress MKV formated files
+   GUIDE = """<b> Right now the bot can only compress MKV formated files
 and the file must be Telegram Video or Telegram Document type
 to learn more specifically, use this /help <setting name>
 for example /help crf\n\nhelp is available for:\nCRF\nVBR\nCoDec<b> \n"""
-
-CRF = """
+   CRF = """
 <b> CRF(Constant Rate Factor) <b>
 
 it is the main quality and size controlling option
@@ -33,7 +33,7 @@ to learn more, google search and also you can use
 a software called MediaInfo to check the crf used
 when encoding a video file.
 """
-VBR = """
+   VBR = """
 <b> vbr(Variable Bit Rate) <b>
 
 it is one of the settings we use to set the
@@ -42,8 +42,7 @@ The BitRate differs for each level
 it has 5 levels. 1 is the lowest BitRate and 5 is the highest
 """
 
-
-CoDec = """
+   CoDec = """
 <b> CoDec(Coder-Decoder) <b>
 
 codec is the thing that convert data from digital into Analogue
