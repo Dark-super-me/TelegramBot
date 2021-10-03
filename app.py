@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from config import Config
-
+from helper import OpenSettings 
 bot = Client(
     'simp-bot',
     bot_token = Config.BOT_TOKEN,
@@ -10,23 +10,14 @@ bot = Client(
 )
 # let us defines some events 
 # oof the callback .
-async def help(event: Message):
-    await event.reply_text(
-        "The Bot isnt fully completed yet by the Owner\n\nPlease be patient until further notice\n\nJoin @Animes_Encoded"
-    )
-async def thelp(event):
-    oof = f"`Hi {message.from_user.username} \n\nThe Bot isnt fully developed by the owner.\n\nPlease be patient until further notice"
-    message.reply_text(
-        text=oof
-        quote=False,
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton('Back', callback_data="
+@bot.on_callback_query()
+async def callback_handlers(bot: Client, cb: CallbackQuery):
+    if "closeme" in cb.data:
+        await cb.message.delete(True)
+    elif "opensettings" in cb.data:
+        await OpenSettings(cb.message, user_id=cb.from_user.id)
         
-    
-    
-# let's make some simple filters...
+# Import OpenSettings ...
                                          
 
 @bot.on_message(filters.command(['start']))
@@ -46,9 +37,11 @@ def start(client, message):
   
 @bot.on_message(filters.command(['help']))
 def help(client, message):
+                                         
   message.reply_text("No help modules set right now !!\n\nSoon , new update will come!")
     
 @bot.on_callback_query()
+                                         
                                          
                                          
 # run the bot
