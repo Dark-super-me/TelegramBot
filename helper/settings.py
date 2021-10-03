@@ -5,7 +5,7 @@ START_TEXT = """ <b> Hi {} , \nI'm a next generation video encoder bot!</b> \n
 """
 HELP_TEXT = """Checkout The Available Commands Here \n\n Do Follow @Animes_Encoded\n\n If You Find This Bot Usefull❤️"""
 
-GUIDE_CRF = """<b> Right now the bot can only compress MKV formated files
+GUIDE = """<b> Right now the bot can only compress MKV formated files
 and the file must be Telegram Video or Telegram Document type
 to learn more specifically, use this /help <setting name>
 for example /help crf\n\nhelp is available for:\nCRF\nVBR\nCoDec<b> \n"""
