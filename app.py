@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultArticle, InputTextMessageContent)
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from config import Config
 
 bot = Client(
@@ -9,8 +9,9 @@ bot = Client(
     api_hash = Config.API_HASH
 )
 # let us defines some events 
-async def help(event):
-    await message.reply_text(
+# oof the callback .
+async def help(event: Message):
+    await event.reply_text(
         "The Bot isnt fully completed yet by the Owner\n\nPlease be patient until further notice\n\nJoin @Animes_Encoded"
     )
 async def thelp(event):
@@ -21,11 +22,12 @@ async def thelp(event):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Back', callback
+                    InlineKeyboardButton('Back', callback_data="
         
     
     
 # let's make some simple filters...
+                                         
 
 @bot.on_message(filters.command(['start']))
 def start(client, message):
@@ -46,6 +48,32 @@ def start(client, message):
 def help(client, message):
   message.reply_text("No help modules set right now !!\n\nSoon , new update will come!")
     
-    
+@bot.on_callback_query()
+                                         
+                                         
 # run the bot
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
 bot.run()
