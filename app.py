@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, 
 from config import Config
 from translation import Translation 
 
-Encoder = Client(
+bot = Client(
     'simp-bot',
     bot_token = Config.BOT_TOKEN,
     api_id = Config.API_ID,
@@ -18,42 +18,36 @@ HELP_BUTTON = InlineKeyboardMarkup(
 
 GUIDE_BUTTON = InlineKeyboardMarkup(
     [[
-        InlineKeyboardButton ("Back", callback_data="beck")
+        InlineKeyboardButton ('HOME', callback_data="beck")
     ]]
 )
-@Encoder.on_message(filters.command(['start']))
-def start(client, message):
+@bot.on_message(filters.command(['start']))
+def start(bot: Client, event: Message):
     text=Translation.START_TEXT,
-    quote=False,
+    disable_web_page_preview=True,
+    parse_mode="html",
     reply_markup=HELP_BUTTON  
     
      
       
-@Encoder.on_callback_query()
-async def cb_handler(client: Encoder , query: CallbackQuery):
-    data = query.data
-    if data == "ihelp":
-        try:
-            await query.message.edit_text(
-                text=Translation.HELP_TEXT,
-                quote=False,
+@bot.on_callback_query()
+async def callback_handlers(_, event: CallbackQuery):
+    if "ihelp" in event.data:
+        await event.message.edit(
+            text=Translation.HELP_TEXT,
+            parse_mode="html",
+            disable_web_page_preview=True,
+            reply_markup=GUIDE_BUTTON
+    elif "iguide" in event.data:
+            await event.message.edit(
+                text=Translation.GUIDE,
+                paste_made="html",
+                disable_web_page_preview=True,
                 reply_markup=GUIDE_BUTTON
-   # elif data == "iguide":
-       # try:
-           # await query.message.edit_text(
-                #text=Translation.GUIDE,
-               # quote=False,
-              #  reply_markup=GUIDE_BUTTON
-    
-   # elif data == "beck":
-     #   try:
-         #   await query.message.edit_text(
-         #       text=Translation.START_TEXT,
-               # quote=False,
-               # reply_markup=GUIDE_BUTTON
-       # except:
-          #  pass
-        
-           
- Encoder.run()         
- # fine            
+    elif "beck" in event.data:
+                await event.message.edit(
+                    text=Translation.START_TEXT,
+                    parse_made="html",
+                    disable_web_page_preview=True,
+                    reply_markup=HELP_BUTTON
+bot.run()
