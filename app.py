@@ -22,12 +22,29 @@ def start(client, message):
 async def cb_handler(client: bot , query: CallbackQuery);
     data = query.data
     if data == "ihelp":
-        await query.message.edit_text(
-            text=Translation.HELP_TEXT,
+        try:
+            
+            
+            await query.message.edit_text(
+                
+                text=Translation.HELP_TEXT,
             quote=False,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('📋 GUIDE', callback_data="iguide"),InlineKeyboardButton('Back', callback_data="beck")]]))
+    elif data == "iguide":
+        await query.message.edit_text(
+            text=Translation.GUIDE,
+            quote=False,
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('Back', callback_data="beck")]]))
+    elif data == "beck":
+        await query.message.edit_text(
+            text=Translation.START_TEXT,
+            quote=False,
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('♨️ HELP', callback_data="ihelp"),InlineKeyboardButton('📋 GUIDE', callback_data="iguide")]]))
+           
             
-        
+            
+            
+    
         
         
     
