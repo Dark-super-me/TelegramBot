@@ -23,8 +23,8 @@ GUIDE_BUTTON = InlineKeyboardMarkup(
 )
 @bot.on_message(filters.command(['start']))
 def start(bot: Client, event: Message):
-    r = "<b> Hi {} , \nI'm a next generation video encoder bot!</b> \n
-<b>Bot Maintained By: @Animes_Encoded </b> \n"
+    r = "Hi , \nI'm a next generation video encoder bot!\n
+         Bot Maintained By: @Animes_Encoded"
     text=r,
     disable_web_page_preview=True,
     parse_mode="html",
