@@ -15,15 +15,19 @@ bot = Client(
 def start(client, message):
     text=Translation.START_TEXT,
     quote=False,
-    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('HELP', callback_data="ihelp")],InlineKeyboardButton('GUIDE', callback_data="iguide")]]))
-    
+    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('♨️ HELP', callback_data="ihelp"),InlineKeyboardButton('📋 GUIDE', callback_data="iguide")]]))
            
-         
-            
+  
 @bot.on_callback_query()
 async def cb_handler(client: bot , query: CallbackQuery);
     data = query.data
     if data == "ihelp":
+        await query.message.edit_text(
+            text=Translation.HELP_TEXT,
+            quote=False,
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('📋 GUIDE', callback_data="iguide"),InlineKeyboardButton('Back', callback_data="beck")]]))
+            
+        
         
         
     
