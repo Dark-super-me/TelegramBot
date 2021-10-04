@@ -37,17 +37,17 @@ async def callback_handlers(_, event: CallbackQuery):
             text=Translation.HELP_TEXT,
             parse_mode="html",
             disable_web_page_preview=True,
-            reply_markup=GUIDE_BUTTON
+            reply_markup=GUIDE_BUTTON)
     elif "iguide" in event.data:
             await event.message.edit(
                 text=Translation.GUIDE,
                 paste_made="html",
                 disable_web_page_preview=True,
-                reply_markup=GUIDE_BUTTON
+                reply_markup=GUIDE_BUTTON)
     elif "beck" in event.data:
                 await event.message.edit(
                     text=Translation.START_TEXT,
                     parse_made="html",
                     disable_web_page_preview=True,
-                    reply_markup=HELP_BUTTON
+                    reply_markup=HELP_BUTTON)
 bot.run()
