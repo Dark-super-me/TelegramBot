@@ -41,6 +41,6 @@ async def cb_handler(client: Encoder , query: CallbackQuery);
                 quote=False,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('♨️ HELP', callback_data="ihelp"),InlineKeyboardButton('📋 GUIDE', callback_data="iguide")]]))
            
-            
-            
-            
+           
+ Encoder.run()         
+ # fine            
