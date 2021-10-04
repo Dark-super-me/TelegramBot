@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, 
 from config import Config
 from translation import Translation 
 
-bot = Client(
+Encoder = Client(
     'simp-bot',
     bot_token = Config.BOT_TOKEN,
     api_id = Config.API_ID,
@@ -11,15 +11,15 @@ bot = Client(
 )
   
     
-@bot.on_message(filters.command(['start']))
+@Encoder.on_message(filters.command(['start']))
 def start(client, message):
     text=Translation.START_TEXT,
     quote=False,
     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('♨️ HELP', callback_data="ihelp"),InlineKeyboardButton('📋 GUIDE', callback_data="iguide")]]))
            
   
-@bot.on_callback_query()
-async def cb_handler(client: bot , query: CallbackQuery);
+@Encoder.on_callback_query()
+async def cb_handler(client: Encoder , query: CallbackQuery);
     data = query.data
     if data == "ihelp":
         try:
