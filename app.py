@@ -38,21 +38,21 @@ async def cb_handler(client: Encoder , query: CallbackQuery):
                 text=Translation.HELP_TEXT,
                 quote=False,
                 reply_markup=GUIDE_BUTTON
-    elif data == "iguide":
-        try:
-            await query.message.edit_text(
-                text=Translation.GUIDE,
-                quote=False,
-                reply_markup=GUIDE_BUTTON
+   # elif data == "iguide":
+       # try:
+           # await query.message.edit_text(
+                #text=Translation.GUIDE,
+               # quote=False,
+              #  reply_markup=GUIDE_BUTTON
     
-    elif data == "beck":
-        try:
-            await query.message.edit_text(
-                text=Translation.START_TEXT,
-                quote=False,
-                reply_markup=GUIDE_BUTTON
-        except:
-            pass
+   # elif data == "beck":
+     #   try:
+         #   await query.message.edit_text(
+         #       text=Translation.START_TEXT,
+               # quote=False,
+               # reply_markup=GUIDE_BUTTON
+       # except:
+          #  pass
         
            
  Encoder.run()         
