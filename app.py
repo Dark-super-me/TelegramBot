@@ -30,7 +30,7 @@ def start(client, message):
      
       
 @Encoder.on_callback_query()
-async def cb_handler(client: Encoder , query: CallbackQuery);
+async def cb_handler(client: Encoder , query: CallbackQuery):
     data = query.data
     if data == "ihelp":
         try:
