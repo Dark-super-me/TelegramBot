@@ -40,7 +40,9 @@ async def cb_handler(client: Encoder , query: CallbackQuery);
                 text=Translation.START_TEXT,
                 quote=False,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('♨️ HELP', callback_data="ihelp"),InlineKeyboardButton('📋 GUIDE', callback_data="iguide")]]))
-           
+        except:
+            pass
+        
            
  Encoder.run()         
  # fine            
