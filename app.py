@@ -23,37 +23,24 @@ async def cb_handler(client: bot , query: CallbackQuery);
     data = query.data
     if data == "ihelp":
         try:
-            
-            
             await query.message.edit_text(
-                
                 text=Translation.HELP_TEXT,
-            quote=False,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('📋 GUIDE', callback_data="iguide"),InlineKeyboardButton('Back', callback_data="beck")]]))
+                quote=False,
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('📋 GUIDE', callback_data="iguide"),InlineKeyboardButton('Back', callback_data="beck")]]))
     elif data == "iguide":
-        await query.message.edit_text(
-            text=Translation.GUIDE,
-            quote=False,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('Back', callback_data="beck")]]))
+        try:
+            await query.message.edit_text(
+                text=Translation.GUIDE,
+                quote=False,
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('Back', callback_data="beck")]]))
+    
     elif data == "beck":
-        await query.message.edit_text(
-            text=Translation.START_TEXT,
-            quote=False,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('♨️ HELP', callback_data="ihelp"),InlineKeyboardButton('📋 GUIDE', callback_data="iguide")]]))
+        try:
+            await query.message.edit_text(
+                text=Translation.START_TEXT,
+                quote=False,
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('♨️ HELP', callback_data="ihelp"),InlineKeyboardButton('📋 GUIDE', callback_data="iguide")]]))
            
             
             
             
-    
-        
-        
-    
-            
-           
-            
-            
-           
-                
-        
-    
-
