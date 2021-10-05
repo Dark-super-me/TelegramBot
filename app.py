@@ -31,7 +31,7 @@ def start(client,message):
   Client.send_message(
     chat_id,
     f"Hi {message.from_user.username} \n <b> I am one simple bot  made by @Bro_isDarkal \nPls click the below buttons to get a hint about this bot !\n\n By @Animes_Encoded.<b> \n",
-    parse_mode="markdown",
+    quote=False,
     reply_markup=InlineKeyboardMarkup(button))
     
 
@@ -40,20 +40,17 @@ async def callback_handlers(_, event: CallbackQuery):
     if "ihelp" in event.data:
         await event.message.edit(
             text="Checkout The Available Commands Here \n\n Do Follow @Animes_Encoded\n\n If You Find This Bot Usefull❤️",
-            parse_mode="html",
-            disable_web_page_preview=True,
+            quote=False,
             reply_markup=InlineKeyboardMarkup(bbutton))
     elif "iguide" in event.data:
             await event.message.edit(
                 text="Right now the bot can only compress MKV formated files and the file must be Telegram Video or Telegram Document type",
-                paste_made="html",
-                disable_web_page_preview=True,
+                quote=False,
                 reply_markup=InlineKeyboardMarkup(bbutton))
     elif "beck" in event.data:
                 await event.message.edit(
                     text="Hi \nIam next generation video encoder bot!\n\nUpdates will come soon\n\nnMaintained by • @Animes_Encoded",
-                    parse_made="html",
-                    disable_web_page_preview=True,
+                    quote=False,
                     reply_markup=InlineKeyboardMarkup(button))
        
           
