@@ -8,13 +8,14 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-
-bot = Client(
-    'simp-bot',
-    bot_token = Config.BOT_TOKEN,
-    api_id = Config.API_ID,
-    api_hash = Config.API_HASH
+bot=Client(
+  'roof',
+  bot_token=Config.BOT_TOKEN,
+  api_id=Config.API_ID,
+  api_hash=Config.API_HASH
 )
+  
+
 button=[]
 button.append([[InlineKeyboardButton("Help", callback_data="ihelp")]])
 button.append([[InlineKeyboardButton("Guide", callback_data="iguide")]])
