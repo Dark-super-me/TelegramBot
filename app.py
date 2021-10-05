@@ -24,27 +24,16 @@ bbutton.append([[InlineKeyboardButton("Back", callback_data="beck")]])
 
 
 
-@bot.on_message(filters.command(['start']))
-def start(client, message):
-  r = f"Hello {message.from_user.username}\nIam next generation video encoder bot!\n\nUpdates will come soon\n\nnMaintained by • @Animes_Encoded",
-  message.reply_text(
-    text=r,
-    parse_made="html",
-    reply_markup=InlineKeyboardMarkup(
-      [
-        [
-          InlineKeyboardButton("Help", callback_data="ihelp")
-          ]
-        ]
-      )
-    )
-
-
-               
-        
+@app.on_message(filters.command("start"))
+def start(client,message):
+  chat_id=message.chat_id,
+  Client.send_message(
+    chat_id,
+    f"Hi {message.from_user.username} \n <b> I am one simple bot  made by @Bro_isDarkal \nPls click the below buttons to get a hint about this bot !\n\n By @Animes_Encoded.<b> \n",
+    parse_mode="markdown",
+    reply_markup=InlineKeyboardMarkup(button))
     
-     
-      
+
 @bot.on_callback_query()
 async def callback_handlers(_, event: CallbackQuery):
     if "ihelp" in event.data:
