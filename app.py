@@ -2,6 +2,12 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from config import Config
 from translation import Translation 
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
+
 
 bot = Client(
     'simp-bot',
@@ -46,4 +52,8 @@ async def callback_handlers(_, event: CallbackQuery):
                     parse_made="html",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup(button))
+            except Exception as e:
+                logger.info(e)
+               
+        
 bot.run()
