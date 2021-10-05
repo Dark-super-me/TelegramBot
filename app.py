@@ -26,10 +26,10 @@ bbutton.append([[InlineKeyboardButton("Back", callback_data="beck")]])
 
 @bot.on_message(filters.command(['start']))
 def start(client, message):
-  r = f"`Hello {message.from_user.username} \n\nThis is a Telegram  Bot. \n\nI am still in a beta mode as I was built by my dev recently\n\n/help for more details.\n\nChannel : @Animes_Encoded`"
+  r = f"Hello {message.from_user.username}\nIam next generation video encoder bot!\n\nUpdates will come soon\n\nnMaintained by • @Animes_Encoded",
   message.reply_text(
     text=r,
-    quote=False,
+    parse_made="html",
     reply_markup=InlineKeyboardMarkup(
       [
         [
