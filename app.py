@@ -5,7 +5,7 @@ from translation import Translation
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 bot=Client(
@@ -52,6 +52,9 @@ async def callback_handlers(_, event: CallbackQuery):
                     text="Hi \nIam next generation video encoder bot!\n\nUpdates will come soon\n\nnMaintained by • @Animes_Encoded",
                     quote=False,
                     reply_markup=InlineKeyboardMarkup(button))
+        except Exception as e:
+          LOGGER.info(e)
+          
        
           
 # run the application        
