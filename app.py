@@ -36,13 +36,13 @@ async def callback_handlers(_, event: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(bbutton))
     elif "iguide" in event.data:
             await event.message.edit(
-                text=Translation.GUIDE,
+                text="Right now the bot can only compress MKV formated files and the file must be Telegram Video or Telegram Document type",
                 paste_made="html",
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(bbutton))
     elif "beck" in event.data:
                 await event.message.edit(
-                    text=Translation.START_TEXT,
+                    text="Hi \nIam next generation video encoder bot!\n\nUpdates will come soon\n\nnMaintained by • @Animes_Encoded",
                     parse_made="html",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup(button))
