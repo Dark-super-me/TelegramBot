@@ -25,7 +25,7 @@ bbutton.append([[InlineKeyboardButton("Back", callback_data="beck")]])
 
 
 
-@app.on_message(filters.command("start"))
+@bot.on_message(filters.command("start"))
 def start(client,message):
   chat_id=message.chat_id,
   Client.send_message(
