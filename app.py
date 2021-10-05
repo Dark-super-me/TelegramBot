@@ -22,14 +22,24 @@ button.append([[InlineKeyboardButton("Guide", callback_data="iguide")]])
 bbutton=[]
 bbutton.append([[InlineKeyboardButton("Back", callback_data="beck")]])
 
+
+
 @bot.on_message(filters.command(['start']))
-def start(bot: Client, event: Message):
-    r = "Hi \nIam next generation video encoder bot!\n\nUpdates will come soon\n\nnMaintained by • @Animes_Encoded",
+def start(client, message):
+  r = f"`Hello {message.from_user.username} \n\nThis is a Telegram  Bot. \n\nI am still in a beta mode as I was built by my dev recently\n\n/help for more details.\n\nChannel : @Animes_Encoded`"
+  message.reply_text(
     text=r,
-    disable_web_page_preview=True,
-    parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(button)
-                
+    quote=False,
+    reply_markup=InlineKeyboardMarkup(
+      [
+        [
+          InlineKeyboardButton("Help", callback_data="ihelp")
+          ]
+        ]
+      )
+    )
+
+
                
         
     
