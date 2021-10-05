@@ -9,25 +9,20 @@ bot = Client(
     api_id = Config.API_ID,
     api_hash = Config.API_HASH
 )
-HELP_BUTTON = InlineKeyboardMarkup(
-    [[
-        InlineKeyboardButton ("♨️ HELP", callback_data="ihelp"),
-        InlineKeyboardButton ("📋 GUIDE", callback_data="iguide")
-    ]]
-)   
+button=[]
+button.append([[InlineKeyboardButton("Help", callback_data="ihelp")]])
+button.append([[InlineKeyboardButton("Guide", callback_data="iguide")]])
 
-GUIDE_BUTTON = InlineKeyboardMarkup(
-    [[
-        InlineKeyboardButton ('HOME', callback_data="beck")
-    ]]
-)
+bbutton=[]
+bbutton.append([[InlineKeyboardButton("Back", callback_data="beck")]])
+
 @bot.on_message(filters.command(['start']))
 def start(bot: Client, event: Message):
     r = "Hi \nIam next generation video encoder bot!\n\nUpdates will come soon\n\nnMaintained by • @Animes_Encoded",
     text=r,
     disable_web_page_preview=True,
     parse_mode="html",
-    reply_markup=HELP_BUTTON  
+    reply_markup=InlineKeyboardMarkup(button)
     
      
       
@@ -38,17 +33,17 @@ async def callback_handlers(_, event: CallbackQuery):
             text=Translation.HELP_TEXT,
             parse_mode="html",
             disable_web_page_preview=True,
-            reply_markup=GUIDE_BUTTON)
+            reply_markup=InlineKeyboardMarkup(bbutton))
     elif "iguide" in event.data:
             await event.message.edit(
                 text=Translation.GUIDE,
                 paste_made="html",
                 disable_web_page_preview=True,
-                reply_markup=GUIDE_BUTTON)
+                reply_markup=InlineKeyboardMarkup(bbutton))
     elif "beck" in event.data:
                 await event.message.edit(
                     text=Translation.START_TEXT,
                     parse_made="html",
                     disable_web_page_preview=True,
-                    reply_markup=HELP_BUTTON)
+                    reply_markup=InlineKeyboardMarkup(button))
 bot.run()
