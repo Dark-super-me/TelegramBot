@@ -29,6 +29,11 @@ def start(bot: Client, event: Message):
     disable_web_page_preview=True,
     parse_mode="html",
     reply_markup=InlineKeyboardMarkup(button)
+    except Exception as e:
+      logger.info(e)
+                
+               
+        
     
      
       
@@ -52,8 +57,7 @@ async def callback_handlers(_, event: CallbackQuery):
                     parse_made="html",
                     disable_web_page_preview=True,
                     reply_markup=InlineKeyboardMarkup(button))
-        except Exception as e:
-          logger.info(e)
+       
           
 # run the application        
 bot.run()
