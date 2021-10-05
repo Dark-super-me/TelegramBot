@@ -52,8 +52,7 @@ async def callback_handlers(_, event: CallbackQuery):
                     text="Hi \nIam next generation video encoder bot!\n\nUpdates will come soon\n\nnMaintained by • @Animes_Encoded",
                     quote=False,
                     reply_markup=InlineKeyboardMarkup(button))
-        except Exception as e:
-          LOGGER.info(e)
+        
           
        
           
