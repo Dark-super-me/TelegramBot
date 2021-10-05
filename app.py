@@ -30,8 +30,7 @@ def start(bot: Client, event: Message):
 async def callback_handlers(_, event: CallbackQuery):
     if "ihelp" in event.data:
         await event.message.edit(
-            o = "Checkout The Available Commands Here \n\n Do Follow @Animes_Encoded\n\n If You Find This Bot Usefull❤️",
-            text=o,
+            text="Checkout The Available Commands Here \n\n Do Follow @Animes_Encoded\n\n If You Find This Bot Usefull❤️",
             parse_mode="html",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(bbutton))
