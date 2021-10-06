@@ -27,9 +27,7 @@ bbutton.append([[InlineKeyboardButton("Back", callback_data="beck")]])
 
 @bot.on_message(filters.command("start"))
 async def start(client,message):
-  chat_id=message.chat_id,
   await client.send_message(
-    chat_id,
     f"Hi {message.from_user.username} \n <b> I am one simple bot  made by @Bro_isDarkal \nPls click the below buttons to get a hint about this bot !\n\n By @Animes_Encoded.<b> \n",
     reply_markup=InlineKeyboardMarkup(button))
     
