@@ -22,16 +22,17 @@ button.append([[InlineKeyboardButton("Guide", callback_data="iguide")]])
 
 bbutton=[]
 bbutton.append([[InlineKeyboardButton("Back", callback_data="beck")]])
-
+# python (c) list 
 
 
 @bot.on_message(filters.command("start"))
 async def start(client,message):
   await client.send_message(
-    f"Hi {message.from_user.username} \n <b> I am one simple bot  made by @Bro_isDarkal \nPls click the below buttons to get a hint about this bot !\n\n By @Animes_Encoded.<b> \n",
+    r = f"Hi {message.from_user.username} \n <b> I am one simple bot  made by @Bro_isDarkal \nPls click the below buttons to get a hint about this bot !\n\n By @Animes_Encoded.<b> \n",
+    text=r,
     reply_markup=InlineKeyboardMarkup(button))
-    
-
+   
+# callback data is below .....
 @bot.on_callback_query()
 async def callback_handlers(_, event: CallbackQuery):
     if "ihelp" in event.data:
