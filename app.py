@@ -73,6 +73,7 @@ guide_b=[]
 guide_b.append([InlineKeyboardButton("CRF", callback_data="icrf")])
 guide_b.append([InlineKeyboardButton("CODEC", callback_data="icodec")])
 guide_b.append([InlineKeyboardButton("VBR", callback_data="ivbr")])
+guide_b.append([InlineKeyboardButton("↗️ BACK ", callback_data="beck")])
 
 button=[]
 button.append([InlineKeyboardButton("♨️ HELP ", callback_data="ihelp")])
@@ -109,7 +110,17 @@ async def callback_handlers(_, event: CallbackQuery):
       await event.message.edit(
         text=CRF,
         reply_markup=InlineKeyboardMarkup(guide_b))
-    
+    elif "ivbr" in event.data:
+       await event.message.edit(
+         text=VBR,
+         reply_markup=InlineKeyboardMarkup(guide_b))
+    elif "icodec" in event.data:
+      await event.message.edit(
+        text=CoDec,
+        reply_markup=InlineKeyboardMarkup(guide_b))
+  
+      
+         
         
     
           
