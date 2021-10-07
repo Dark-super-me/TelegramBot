@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, 
 from config import Config
 import subprocess
 from threading import Thread
-from pyrogram import Client, filters
+
 from pykeyboard import InlineKeyboard
 
 import time
