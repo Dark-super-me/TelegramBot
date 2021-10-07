@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 from config import Config
-from translation import Translation 
+
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -15,7 +15,7 @@ bot=Client(
   api_hash=Config.API_HASH
 )
 
-START_TEXT = """ <b>Hi {} , \nI'm a next generation video encoder bot!</b> \n
+START_TEXT = """ <b>Hi , \nI'm a next generation video encoder bot!</b> \n
 <b>Bot Maintained By: @Animes_Encoded</b> \n 
 """
    
@@ -102,15 +102,15 @@ async def callback_handlers(_, event: CallbackQuery):
     elif "iguide" in event.data:
        await event.message.edit(
          text=GUIDE,
-         repl
+         reply_markup=InlineKeyboardMarkup(guide_b))
          
          
     elif "beck" in event.data:
        await event.message.edit(
+         text=START_TEXT,
+         reply_markup=InlineKeyboardMarkup(button))
          
-          text="Hi \nIam next generation video encoder bot!\n\nUpdates will come soon\n\nnMaintained by • @Animes_Encoded",
-          reply_markup=InlineKeyboardMarkup(button))
-        
+          
            
        
           
