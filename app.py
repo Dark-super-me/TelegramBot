@@ -25,9 +25,9 @@ HELP_TEXT = """Checkout The Available Commands Here \n\n Do Follow @Animes_Encod
 GUIDE = """<b>Right now the bot can only compress MKV formated files
 and the file must be Telegram Video or Telegram Document type
 to learn more specifically, use this /help <setting name>
-for example /help crf\n\nhelp is available for:\nCRF\nVBR\nCoDec<b> \n"""
+for example /help crf\n\nhelp is available for:\nCRF\nVBR\nCoDec</b> \n"""
 CRF = """
-<b>CRF(Constant Rate Factor)<b>
+<b>CRF(Constant Rate Factor)</b>
 it is the main quality and size controlling option
 since the Rate Factor is Constant, the
 video will have constant quality throughout
@@ -47,7 +47,7 @@ a software called MediaInfo to check the crf used
 when encoding a video file.
 """
 VBR = """
-<b>vbr(Variable Bit Rate)<b>
+<b>vbr(Variable Bit Rate)</b>
 it is one of the settings we use to set the
 audio quality. so depending on the profile used
 The BitRate differs for each level
@@ -55,7 +55,7 @@ it has 5 levels. 1 is the lowest BitRate and 5 is the highest
 """
 
 CoDec = """
-<b>CoDec(Coder-Decoder)<b>
+<b>CoDec(Coder-Decoder)</b>
 codec is the thing that convert data from digital into Analogue
 or vice versa
  when we play video we can say we are Decoding or
@@ -70,9 +70,9 @@ also we are both decoding and encoding this time too.
 
   
 guide_b=[]
-guide_b.append([InlineKeyboardButton("CRF", callback_data="icrf")])
-guide_b.append([InlineKeyboardButton("CODEC", callback_data="icodec")])
-guide_b.append([InlineKeyboardButton("VBR", callback_data="ivbr")])
+guide_b.append([InlineKeyboardButton("🗳 CRF", callback_data="icrf")])
+guide_b.append([InlineKeyboardButton("🗳 CODEC", callback_data="icodec")])
+guide_b.append([InlineKeyboardButton("🗳 VBR", callback_data="ivbr")])
 guide_b.append([InlineKeyboardButton("↗️ BACK ", callback_data="beck")])
 
 button=[]
