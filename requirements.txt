@@ -1,2 +1,6 @@
 Pyrogram 
-TgCrypto 
+TgCrypto
+Pyrogram
+pykeyboard~=0.1.1
+ffmpeg-python
+
