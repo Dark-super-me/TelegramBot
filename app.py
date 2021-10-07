@@ -97,25 +97,21 @@ async def callback_handlers(_, event: CallbackQuery):
        await event.message.edit_text(
          text=HELP_TEXT,
          reply_markup=InlineKeyboardMarkup(bbutton))
-         
-           
     elif "iguide" in event.data:
        await event.message.edit(
          text=GUIDE,
-         reply_markup=InlineKeyboardMarkup(guide_b))
-         
-         
+         reply_markup=InlineKeyboardMarkup(guide_b))    
     elif "beck" in event.data:
        await event.message.edit(
          text=START_TEXT,
          reply_markup=InlineKeyboardMarkup(button))
     elif "icrf" in event.data:
-       await event.message.edit(
-         text=CRF,
-         reply_markup=InlineKeyboardMarkup(guide_b))
-    elif "ivbr" in event.data:
-      
-         
+      await event.message.edit(
+        text=CRF,
+        reply_markup=InlineKeyboardMarkup(guide_b))
+    
+        
+    
           
            
        
