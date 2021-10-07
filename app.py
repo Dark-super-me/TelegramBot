@@ -32,7 +32,7 @@ START_TEXT = """ <b>Hi , \nI'm a next generation video encoder bot!</b> \n
 """
    
 
-HELP_TEXT = """This <b>bot</b> can encode videos in multiple qualities\n\nQueue Feature isnt added for now due to some reasons</b>\nJoin @Animes_Encoded \n\n❤ Made by love """
+HELP_TEXT = """This <b>bot</b> can encode videos in multiple qualities\n\nQueue Feature isnt added for now due to some reasons</b>\n\nFor converting videos reply video file by /convert\n\nJoin @Animes_Encoded \n\n❤ Made by love """
 
 GUIDE = """<b>Right now the bot can only compress MKV formated files
 and the file must be Telegram Video or Telegram Document type
