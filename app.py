@@ -11,6 +11,9 @@ import asyncio
 import re
 from os import mkdir, system
 
+import ffmpeg
+
+
 import logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
