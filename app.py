@@ -246,7 +246,13 @@ async def callbacks(client, query):
 @app.on_message(filters.command(["convert"]))
 async def ffmpeg(client, message):
     try:
-        message = message.reply_to_message
+        if message.reply_to_message is None:
+          try:
+            await message.reply_text("🤬 Reply to telegram media 🤬")
+          except:
+            pass
+          return
+        File2Convert = message.reply_to_message
         chat_id = str(message.chat.id)
         message_id = str(message.message_id)
         keyboard = InlineKeyboard()
@@ -261,7 +267,7 @@ async def ffmpeg(client, message):
         keyboard.row(
             InlineKeyboardButton('480p', message_id + "#Compressed#" + str(chat_id))
         )
-        await message.send_message("Select The Option You Want", reply_markup=keyboard)
+        await message.reply_text("Select The Option You Want", reply_markup=keyboard)
     except Exception as e:
         print("Error : "+str(e))
         await message.reply_text("Please Reply To A Valid Media File")
