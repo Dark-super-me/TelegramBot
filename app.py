@@ -20,7 +20,7 @@ logging.basicConfig(level=logging.DEBUG,
 LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-bot=Client(
+app=Client(
   'roof',
   bot_token=Config.BOT_TOKEN,
   api_id=Config.API_ID,
@@ -96,7 +96,7 @@ bbutton.append([InlineKeyboardButton("↗️ BACK ", callback_data="beck")])
 # python (c) list 
 
 
-@bot.on_message(filters.command("start"))
+@app.on_message(filters.command("start"))
 async def start(client,message):
   await client.send_message(
     message.chat.id,
@@ -104,7 +104,7 @@ async def start(client,message):
     reply_markup=InlineKeyboardMarkup(button))
    
 # callback data is below .....
-@bot.on_callback_query()
+@app.on_callback_query()
 async def callback_handlers(_, event: CallbackQuery):
     if "ihelp" in event.data:
        await event.message.edit_text(
@@ -273,4 +273,4 @@ async def ffmpeg(client, message):
        
           
 # run the application        
-bot.run()
+app.run()
