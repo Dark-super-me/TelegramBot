@@ -190,7 +190,7 @@ async def progressbar(current, total, query, startedon, dlorup):
     total_formatted = await format_bytes(total)
     speed_formatted = await format_bytes(speed)
     if int(diff)%5==0:
-        await query.edit_message_text(
+        await query.edit_text(
         "{} The File\nProgress: {}/{}  {}\nPercentage: {}".format(
             dlorup, current_formatted, total_formatted, speed_formatted + "/s", current_percent+"%")
     )
@@ -218,11 +218,11 @@ async def callbacks(client, query):
     message_id = data[0]
     chat_id = data[2]
     message = await app.get_messages(chat_id=chat_id, message_ids=int(message_id))
-    await query.edit_message_text("Starting Your Download...")
+    await query.edit_text("Starting Your Download...")
 
     path = await message.download(dirname, progress=progressbar,
                                   progress_args=(query, time.time(), "Downloading"))
-    await query.edit_message_text("Download Completed Starting Encoding...")
+    await query.edit_text("Download Completed Starting Encoding...")
     newfname = "/".join(path.split("/")[:-1]) + "/" + "[" + data[1] + "] " + path.split("/")[-1]
 
     converter = Convert(data[1], path, newfname)
@@ -234,12 +234,12 @@ async def callbacks(client, query):
         if oldtxt != newtxt:
             await asyncio.sleep(5)
             if newtxt is not None:
-                await query.edit_message_text(newtxt)
+                await query.edit_text(newtxt)
             oldtxt = newtxt
         if newtxt == "Completed Encoding":
             break
     if converter._done:
-        await query.edit_message_text("Starting to Upload The file Now")
+        await query.edit_text("Starting to Upload The file Now")
         await upload2tg(query, newfname)
 
 
@@ -261,10 +261,10 @@ async def ffmpeg(client, message):
         keyboard.row(
             InlineKeyboardButton('480p', message_id + "#Compressed#" + str(chat_id))
         )
-        await message.reply("Select The Option You Want", reply_markup=keyboard)
+        await message.send_message("Select The Option You Want", reply_markup=keyboard)
     except Exception as e:
         print("Error : "+str(e))
-        await message.reply("Please Reply To A Valid Media File")
+        await message.reply_text("Please Reply To A Valid Media File")
 
 
     
